@@ -25,12 +25,18 @@ namespace RecipeApp
                         Application.Recipe();
                         break;
                     case 2:
+                       Application.DisplayRecipe();
                         break;
                     case 3:
+                        Application.ScaleRecipe();
                         break;
                     case 4:
+                        Application.ResetQuantity();
                         break;
                     case 5:
+                        Application.ClearAllData();
+                        break;
+                    case 6:
                         break;
                     default:
                         Console.WriteLine("Invalid Option");
