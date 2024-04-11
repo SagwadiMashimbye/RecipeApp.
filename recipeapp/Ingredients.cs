@@ -161,7 +161,7 @@ namespace RecipeApp_
 
             int input;
             double Factor;
-            if (int.TryParse(Console.ReadLine(), out input) && input >= 1 && input <= 3)
+            if (int.TryParse(Console.ReadLine(), out input) && input >= 1 && input <= 4)
             {
 
                 switch (input)
@@ -239,22 +239,43 @@ namespace RecipeApp_
 
         public static void ResetQuantity() {
 
-            foreach(var ingredient in ingredients)
-            {
-                ingredient.Quantity = 1;
-            }
-            Console.WriteLine("Recipe has been reset");
-            Console.WriteLine();
             
+
         }
 
         public static void ClearAllData() {
 
-            ingredients.Clear();
-            recipeSteps.Clear();
+            Console.Write("Are you sure you want to reset:\n" +
+                    "1. Yes\n" +
+                    "2. No\n" +
+                    "Option: ");
 
-            Console.WriteLine("Recipe cleared");
-            Console.WriteLine("Please re-enter recipe details by selecting (1) again");
+            int input;
+            if (int.TryParse(Console.ReadLine(), out input) && input >= 1 && input <= 2)
+            {
+
+                switch (input)
+                {
+                    case 1:
+                        recipeSteps.Clear();
+                        original.Clear();
+                        ingredients.Clear();
+                        Console.WriteLine("Recipe cleared");
+                        break;
+                    case 2:
+
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Option");
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invilid input. please enter valid input.");
+
+
+            }
         }
     }
 }
