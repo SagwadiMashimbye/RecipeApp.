@@ -12,10 +12,13 @@ namespace RecipeApp
         {
             int input;
             Console.WriteLine("Welcome to My Recipe App!!");
+            //do loop
             do  
             {
+                //try and catch
                 try
                 {
+                    //displays option for user to pick
                     Console.Write("Choose option:\n" +
                 "1. Add Recipe\n" +
                 "2. Display Recipe\n" +
@@ -26,6 +29,7 @@ namespace RecipeApp
 
                     input = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine();
+                    //added the switch
                     switch (input)
                     {
                         case 1:
