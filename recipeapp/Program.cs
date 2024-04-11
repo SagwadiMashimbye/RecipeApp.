@@ -11,7 +11,9 @@ namespace RecipeApp
         static void Main(string[] args)
         {
             int input;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Welcome to My Recipe App!!");
+            Console.ResetColor();
             //do loop
             do  
             {
@@ -48,23 +50,30 @@ namespace RecipeApp
                             Application.ClearAllData();
                             break;
                         case 6:
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Thank you for using the app");
+                            Console.ResetColor();
                             break;
                         default:
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Invalid Option\n");
+                            Console.ResetColor();
                             break;
 
                     }
                 }
                 catch (FormatException)
                 {
-
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Invalid Option\n");
+                    Console.ResetColor();
                     input = -1;
                 }
                 catch (Exception ex)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Invalid Option\n");
+                    Console.ResetColor();
                     input = -1;
                 }
                
