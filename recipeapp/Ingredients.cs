@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace RecipeApp_
 {
+    //added getter and setters
     internal class Ingredients
     {
         public String Name {  get; set; }
@@ -20,6 +21,7 @@ namespace RecipeApp_
             UnitofMeasurement = unitofmeasurement;
         }
     }
+    //added getter and setter for this class
     class RecipeSteps
     {
         public String Descripion { get; set; }
@@ -29,14 +31,17 @@ namespace RecipeApp_
             Descripion = descripion;
         }
     }
+    //array list
     class Application
     {
         private static List<Ingredients> ingredients = new List<Ingredients>();
         private static List<RecipeSteps> recipeSteps = new List<RecipeSteps>();
         private static List<Ingredients> original = new List<Ingredients>();
 
+        //prompt user to enter recipe details
         public static void Recipe() {
 
+            //prompts user to input the number of ingredients that will be used
             int NumberOfIngredients;
             Console.Write("Enter the Number of Ingredients:");
             if(!int.TryParse(Console.ReadLine(), out NumberOfIngredients) ||  NumberOfIngredients <= 0) {
@@ -48,11 +53,13 @@ namespace RecipeApp_
             try
             {
                 
+                //for loop to store ingredients after being input by the user
                 for(int i = 0; i < NumberOfIngredients; i++)
                 {
                     string Name;
                     Console.Write("Enter name of ingredient:");
                     Name = Console.ReadLine();
+                    //if statement
                     if(string.IsNullOrWhiteSpace(Name))
                     {
                         Console.WriteLine("Invalid input. please enter a valid input");
@@ -64,6 +71,7 @@ namespace RecipeApp_
 
                         Console.WriteLine("Invalid input. please enter a valid number");
                     }
+                    //options to choose 
                     string UnitOfMeasurement;
                     Console.Write("Choose option:\n" +
                     "1. Tablespoon\n" +
@@ -72,7 +80,7 @@ namespace RecipeApp_
 
                     int input;
                     if(int.TryParse(Console.ReadLine(), out input) && input >= 1 && input <= 3) {
-                    
+                    //added the switch
                     switch(input)
                         {
                             case 1:
@@ -100,7 +108,7 @@ namespace RecipeApp_
                     original.Add(new Ingredients(Name, Quantity, UnitOfMeasurement));
 
                 }
-
+                //prompts user to input the number of steps that will be used
                 int NumberofStep;
                 Console.Write("Enter Number of steps:");
                 if(!int.TryParse(Console.ReadLine(),out NumberofStep) || NumberofStep <= 0)
@@ -110,6 +118,7 @@ namespace RecipeApp_
                     Console.ResetColor();
                 }
 
+                //for loop to store steps after being input by theuser
                 for(int i = 0; i < NumberofStep;i++)
                 {
                     string Description;
@@ -133,13 +142,15 @@ namespace RecipeApp_
         public static void DisplayRecipe() {
             
             Console.WriteLine("--------------------------------");
-
+            
+            //for loop to display recipe after being input by the user
             Console.WriteLine("Recipe:");
             foreach (Ingredients ingredient in ingredients)
             {
                 Console.WriteLine($"{ingredient.Quantity} {ingredient.UnitofMeasurement} of {ingredient.Name}");
 
             }
+            //for loop to display recipe after being input by the user
             Console.WriteLine("\nSteps:");
             for (int i = 0; i < recipeSteps.Count; i++)
             {
@@ -150,9 +161,9 @@ namespace RecipeApp_
         
 
     }
-
+        //method scales recipe by the factor 0.5, 2 or 3
         public static void ScaleRecipe() {
-
+            //option to choose for scaling
             Console.Write("Choose a scaling option:\n" +
                     "1. Half\n" +
                     "2. Double\n" +
@@ -163,7 +174,7 @@ namespace RecipeApp_
             double Factor;
             if (int.TryParse(Console.ReadLine(), out input) && input >= 1 && input <= 4)
             {
-
+                //added the switch
                 switch (input)
                 {
                     case 1:
@@ -192,6 +203,7 @@ namespace RecipeApp_
                Factor = 1.0;
 
             }
+            //for loop
             foreach(Ingredients ingredient in ingredients)
             {
                 if(ingredient.UnitofMeasurement == "Teaspoon")
@@ -236,9 +248,9 @@ namespace RecipeApp_
             Console.WriteLine("Recipe has been scaled");
             Console.WriteLine();
         }
-
+//method to reset ingredient quantity back to their original values after being scaled
         public static void ResetQuantity() {
-
+            //for loop 
             for(int i = 0; i < ingredients.Count; i++)
             {
                 ingredients[i].Quantity = original[i].Quantity;
@@ -247,9 +259,9 @@ namespace RecipeApp_
             Console.WriteLine("Has been reset");
 
         }
-
+//method which clears recipe that is enterd by the user
         public static void ClearAllData() {
-
+            //option that the user will choose to reset the recipe
             Console.Write("Are you sure you want to reset:\n" +
                     "1. Yes\n" +
                     "2. No\n" +
@@ -258,7 +270,7 @@ namespace RecipeApp_
             int input;
             if (int.TryParse(Console.ReadLine(), out input) && input >= 1 && input <= 2)
             {
-
+                //added switch
                 switch (input)
                 {
                     case 1:
