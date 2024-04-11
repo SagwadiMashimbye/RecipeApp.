@@ -137,7 +137,7 @@ namespace RecipeApp_
             Console.WriteLine("Recipe:");
             foreach (Ingredients ingredient in ingredients)
             {
-                Console.WriteLine($"{ingredient.Name} {ingredient.Quantity} of {ingredient.UnitofMeasurement}");
+                Console.WriteLine($"{ingredient.Quantity} {ingredient.UnitofMeasurement} of {ingredient.Name}");
 
             }
             Console.WriteLine("\nSteps:");
@@ -168,12 +168,15 @@ namespace RecipeApp_
                 {
                     case 1:
                         Factor = 0.5;
+                        Console.WriteLine($"Recipe scaled by {Factor}.");
                         break;
                     case 2:
                         Factor = 2.0;
+                        Console.WriteLine($"Recipe scaled by {Factor}.");
                         break;
                     case 3:
                        Factor  = 3.0;
+                        Console.WriteLine($"Recipe scaled by {Factor}.");
                         break;
                     case 4:
                         Factor = 1.0;
@@ -188,6 +191,45 @@ namespace RecipeApp_
                 Console.WriteLine("Invilid input. please enter a valid input.");
                Factor = 1.0;
 
+            }
+            foreach(Ingredients ingredient in ingredients)
+            {
+                if(ingredient.UnitofMeasurement == "Teaspoon")
+                {
+                    ingredient.Quantity *= Factor;
+                    if(Factor >= 2.0 && ingredient.Quantity >= 3.0)
+                    {
+                        ingredient.Quantity /= 3.0;
+                        ingredient.UnitofMeasurement = "Tablespoon";
+                    }
+                }
+                else if(ingredient.UnitofMeasurement == "Tablespoon")
+                {
+                    ingredient.Quantity *= Factor;
+                    if(Factor >= 2.0 && ingredient.Quantity >= 16.0)
+                    {
+                        ingredient.Quantity /= 16.0;
+                        ingredient.UnitofMeasurement = "Cups";
+                    }
+                    else if(Factor == 0.5 &&  ingredient.Quantity < 1.0)
+                    {
+                        ingredient.Quantity *= 3.0;
+                        ingredient.UnitofMeasurement = "Teaspoon";
+                    }
+                }
+                else if(ingredient.UnitofMeasurement == "Cups")
+                {
+                    ingredient.Quantity *= Factor;
+                    if(Factor == 0.5 && ingredient.Quantity < 1.0)
+                    {
+                        ingredient.Quantity *= 16.0;
+                        ingredient.UnitofMeasurement = "Tablespoon";
+                    }
+                }
+                else
+                {
+                    ingredient.Quantity *= Factor;
+                }
             }
 
 
