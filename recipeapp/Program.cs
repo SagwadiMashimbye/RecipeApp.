@@ -40,7 +40,7 @@ namespace RecipeApp
                         Application.ClearAllData();
                         break;
                     case 6:
-                       
+                        Console.WriteLine("Thank you for using the app");
                         break;
                     default:
                         Console.WriteLine("Invalid Option");
