@@ -364,7 +364,7 @@ namespace RecipeApp_
                         break;
                     default:
                         Console.ForegroundColor= ConsoleColor.Red;
-                        Console.WriteLine("Invalid Option");
+                        Console.WriteLine("Invalid Option.");
                         Console.ResetColor();
                         throw new ArgumentOutOfRangeException();
                 }
