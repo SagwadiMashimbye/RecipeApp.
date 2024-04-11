@@ -153,9 +153,44 @@ namespace RecipeApp_
 
         public static void ScaleRecipe() {
 
-            Console.WriteLine("")
-            
-            
+            Console.Write("Choose a scaling option:\n" +
+                    "1. Half\n" +
+                    "2. Double\n" +
+                    "3. Triple\n " +
+                    "4. Back\n Option: ");
+
+            int input;
+            double Factor;
+            if (int.TryParse(Console.ReadLine(), out input) && input >= 1 && input <= 3)
+            {
+
+                switch (input)
+                {
+                    case 1:
+                        Factor = 0.5;
+                        break;
+                    case 2:
+                        Factor = 2.0;
+                        break;
+                    case 3:
+                       Factor  = 3.0;
+                        break;
+                    case 4:
+                        Factor = 1.0;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Option");
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invilid input. please enter a valid input.");
+               Factor = 1.0;
+
+            }
+
+
             Console.WriteLine("Recipe has been scaled");
             Console.WriteLine();
         }
