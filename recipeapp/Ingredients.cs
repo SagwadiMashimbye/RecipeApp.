@@ -157,7 +157,7 @@ namespace RecipeApp_
                     "1. Half\n" +
                     "2. Double\n" +
                     "3. Triple\n " +
-                    "4. Back\n Option: ");
+                    "4. Back\nOption: ");
 
             int input;
             double Factor;
