@@ -47,7 +47,7 @@ namespace RecipeApp
                             Console.WriteLine("Thank you for using the app");
                             break;
                         default:
-                            Console.WriteLine("Invalid Option");
+                            Console.WriteLine("Invalid Option\n");
                             break;
 
                     }
@@ -55,12 +55,12 @@ namespace RecipeApp
                 catch (FormatException)
                 {
 
-                    Console.WriteLine("Invalid Option");
+                    Console.WriteLine("Invalid Option\n");
                     input = -1;
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Invalid Option");
+                    Console.WriteLine("Invalid Option\n");
                     input = -1;
                 }
                

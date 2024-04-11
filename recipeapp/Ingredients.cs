@@ -156,7 +156,7 @@ namespace RecipeApp_
             Console.Write("Choose a scaling option:\n" +
                     "1. Half\n" +
                     "2. Double\n" +
-                    "3. Triple\n " +
+                    "3. Triple\n" +
                     "4. Back\nOption: ");
 
             int input;
