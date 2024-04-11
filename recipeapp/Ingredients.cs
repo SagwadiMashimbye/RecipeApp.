@@ -165,7 +165,9 @@ namespace RecipeApp_
                     } while (string.IsNullOrWhiteSpace(Description));
                    
                     recipeSteps.Add(new RecipeSteps(Description));
+                    Console.ForegroundColor= ConsoleColor.Green;
                     Console.WriteLine("Step" + (i + 1) + " Has been saved");
+                    Console.ResetColor();
                 }
             }catch (FormatException ) {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -178,6 +180,12 @@ namespace RecipeApp_
 
         public static void DisplayRecipe() {
             Console.ForegroundColor = ConsoleColor.White;
+            if(ingredients.Count == 0 && recipeSteps.Count == 0) {
+                Console.ForegroundColor =(ConsoleColor) ConsoleColor.Red;
+                Console.WriteLine("No recipe added");
+                Console.ResetColor();
+                return;
+            }
             Console.WriteLine("--------------------------------");
             
             //for loop to display recipe after being input by the user
@@ -201,6 +209,14 @@ namespace RecipeApp_
     }
         //method scales recipe by the factor 0.5, 2 or 3
         public static void ScaleRecipe() {
+            Console.ForegroundColor = ConsoleColor.White;
+            if (ingredients.Count == 0 && recipeSteps.Count == 0)
+            {
+                Console.ForegroundColor = (ConsoleColor)ConsoleColor.Red;
+                Console.WriteLine("No recipe added");
+                Console.ResetColor();
+                return;
+            }
             //option to choose for scaling
             Console.Write("Choose a scaling option:\n" +
                     "1. Half\n" +
@@ -291,16 +307,19 @@ namespace RecipeApp_
                     ingredient.Quantity *= Factor;
                 }
             }
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Recipe has been scaled");
-            Console.ResetColor();
-            Console.WriteLine();
         }
 //method to reset ingredient quantity back to their original values after being scaled
         public static void ResetQuantity() {
+            Console.ForegroundColor = ConsoleColor.White;
+            if (ingredients.Count == 0 && recipeSteps.Count == 0)
+            {
+                Console.ForegroundColor = (ConsoleColor)ConsoleColor.Red;
+                Console.WriteLine("No recipe added");
+                Console.ResetColor();
+                return;
+            }
             //for loop 
-            for(int i = 0; i < ingredients.Count; i++)
+            for (int i = 0; i < ingredients.Count; i++)
             {
                 ingredients[i].Quantity = original[i].Quantity;
                 ingredients[i].UnitofMeasurement = original[i].UnitofMeasurement;
@@ -312,6 +331,14 @@ namespace RecipeApp_
         }
 //method which clears recipe that is enterd by the user
         public static void ClearAllData() {
+            Console.ForegroundColor = ConsoleColor.White;
+            if (ingredients.Count == 0 && recipeSteps.Count == 0)
+            {
+                Console.ForegroundColor = (ConsoleColor)ConsoleColor.Red;
+                Console.WriteLine("No recipe added");
+                Console.ResetColor();
+                return;
+            }
             //option that the user will choose to reset the recipe
             Console.Write("Are you sure you want to reset:\n" +
                     "1. Yes\n" +
