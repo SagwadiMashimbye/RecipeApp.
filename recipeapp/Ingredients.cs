@@ -329,7 +329,7 @@ namespace RecipeApp_
                         original.Clear();
                         ingredients.Clear();
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Recipe cleared");
+                        Console.WriteLine("Recipe cleared.");
                         Console.ResetColor();
                         break;
                     case 2:
