@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -119,7 +120,7 @@ namespace RecipeApp_
                         Console.WriteLine("Invalid input. please eneter a valid input");
                     }
                     recipeSteps.Add(new RecipeSteps(Description));
-                    Console.WriteLine("Step" + (i + 1) + "Has been saved");
+                    Console.WriteLine("Step" + (i + 1) + " Has been saved");
                 }
             }catch (FormatException ) {
 
@@ -129,12 +130,54 @@ namespace RecipeApp_
             
         }
 
-        public static void DisplayRecipe() { }
+        public static void DisplayRecipe() {
+            
+            Console.WriteLine("--------------------------------");
 
-        public static void ScaleRecipe() { }
+            Console.WriteLine("Recipe:");
+            foreach (Ingredients ingredient in ingredients)
+            {
+                Console.WriteLine($"{ingredient.Name} {ingredient.Quantity} of {ingredient.UnitofMeasurement}");
 
-        public static void ResetQuantity() { }
+            }
+            Console.WriteLine("\nSteps:");
+            for (int i = 0; i < recipeSteps.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {recipeSteps[i].Descripion}");
+            }
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine();
+        
 
-        public static void ClearAllData() { }
+    }
+
+        public static void ScaleRecipe() {
+
+            Console.WriteLine("")
+            
+            
+            Console.WriteLine("Recipe has been scaled");
+            Console.WriteLine();
+        }
+
+        public static void ResetQuantity() {
+
+            foreach(var ingredient in ingredients)
+            {
+                ingredient.Quantity = 1;
+            }
+            Console.WriteLine("Recipe has been reset");
+            Console.WriteLine();
+            
+        }
+
+        public static void ClearAllData() {
+
+            ingredients.Clear();
+            recipeSteps.Clear();
+
+            Console.WriteLine("Recipe cleared");
+            Console.WriteLine("Please re-enter recipe details by selecting (1) again");
+        }
     }
 }
