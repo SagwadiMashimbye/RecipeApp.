@@ -68,7 +68,7 @@ namespace RecipeApp_
                     Console.Write("Choose option:\n" +
                     "1. Tablespoon\n" +
                     "2. Teaspoon\n" +
-                    "3. Cups\n Option: ");
+                    "3. Cups\nOption: ");
 
                     int input;
                     if(int.TryParse(Console.ReadLine(), out input) && input >= 1 && input <= 3) {
@@ -102,7 +102,7 @@ namespace RecipeApp_
                 }
 
                 int NumberofStep;
-                Console.WriteLine("Enter Number of steps:");
+                Console.Write("Enter Number of steps:");
                 if(!int.TryParse(Console.ReadLine(),out NumberofStep) || NumberofStep <= 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
