@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace RecipeApp
 {
@@ -9,16 +10,18 @@ namespace RecipeApp
     {
         static void Main(string[] args)
         {
+            int input;
             Console.WriteLine("Welcome to My Recipe App!!");
-            while (true) {
+            do  {
                 Console.Write("Choose option:\n" +
                 "1. Add Recipe\n" +
                 "2. Display Recipe\n" +
                 "3. Scale Recipe\n" +
                 "4. Reset Quantity\n" +
-                "5. Clear All Data\n Option: ");
+                "5. Clear All Data\n" +
+                "6. Close the app\nOption: ");
 
-                int input = Convert.ToInt32(Console.ReadLine());
+                input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
                 {
                     case 1:
@@ -37,14 +40,15 @@ namespace RecipeApp
                         Application.ClearAllData();
                         break;
                     case 6:
+                       
                         break;
                     default:
                         Console.WriteLine("Invalid Option");
                         break;
                         
                 }
-            }
-            
+            } while (input != 6);
+
         }
     }
 }

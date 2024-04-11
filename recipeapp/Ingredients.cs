@@ -239,7 +239,12 @@ namespace RecipeApp_
 
         public static void ResetQuantity() {
 
-            
+            for(int i = 0; i < ingredients.Count; i++)
+            {
+                ingredients[i].Quantity = original[i].Quantity;
+                ingredients[i].UnitofMeasurement = original[i].UnitofMeasurement;
+            }
+            Console.WriteLine("Has been reset");
 
         }
 
