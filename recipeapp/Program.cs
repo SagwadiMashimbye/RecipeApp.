@@ -38,7 +38,7 @@ namespace RecipeApp
                             Application.Recipe();
                             break;
                         case 2:
-                            Application.DisplayRecipe();
+                            Application.ChooseRecipeToDisplay();
                             break;
                         case 3:
                             Application.ScaleRecipe();
