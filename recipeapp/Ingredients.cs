@@ -315,7 +315,7 @@ namespace RecipeApp_
                 }
                 catch (FormatException)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Invalid input");
                     Console.ResetColor();
                 }
