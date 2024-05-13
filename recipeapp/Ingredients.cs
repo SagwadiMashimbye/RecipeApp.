@@ -146,7 +146,7 @@ namespace RecipeApp_
                         }
                        
 
-                        // check the tptal calories calculated in step 1 against the threshold of 300
+                        // check the total calories calculated in step 1 against the threshold of 300
                         // display a notification if the total calories exceed 300
                         double totalCalories = recipe.CalculateTotalCalories();
 
