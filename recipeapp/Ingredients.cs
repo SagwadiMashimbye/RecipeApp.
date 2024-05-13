@@ -363,7 +363,7 @@ namespace RecipeApp_
                 if (totalCalories > 300)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Warning: Total calories exceedd 300!");
+                    Console.WriteLine("Warning: Total calories exceed 300!");
                     Console.ResetColor();
                 }
                     // Display ingredients
