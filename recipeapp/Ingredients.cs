@@ -378,7 +378,7 @@ namespace RecipeApp_
                 {
                     Console.WriteLine($"{i + 1}. {selectedRecipe.RecipeSteps[i].Descripion}");
                 }
-                // Display food group for each ingredients
+                // Display food group for each ingredient
                 Console.WriteLine("\nFood Group:");
                 foreach (Ingredients ingredient in selectedRecipe.Ingredients)
                 {
