@@ -500,7 +500,7 @@ namespace RecipeApp_
                     }
                 }
             }
-            //method to reset ingredient quantity back to their original values after being scaled
+            //method to reset ingredient quantity back to their original values after being scaledd
             public static void ResetQuantity()
             {
                 Console.ForegroundColor = ConsoleColor.White;
