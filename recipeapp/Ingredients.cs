@@ -283,7 +283,7 @@ namespace RecipeApp_
                     } while (NumberofStep <= 0);
 
 
-                    //for loop to store steps after being input by theuser
+                    //for loop to store steps after being input by the user
                     for (int i = 0; i < NumberofStep; i++)
                     {
                         string Description;
