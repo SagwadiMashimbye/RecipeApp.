@@ -320,7 +320,6 @@ namespace RecipeApp_
                     Console.ResetColor();
                 }
 
-
             }
 
            
@@ -574,5 +573,3 @@ namespace RecipeApp_
             }
         }
     }
-
-

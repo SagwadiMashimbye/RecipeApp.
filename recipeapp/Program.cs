@@ -76,11 +76,8 @@ namespace RecipeApp
                     Console.ResetColor();
                     input = -1;
                 }
-               
-                
             }
             while (input != 6);
-
         }
     }
 }
