@@ -1,4 +1,4 @@
-Link:https://github.com/SagwadiMashimbye/RecipeApp./tree/Part2
+https://github.com/SagwadiMashimbye/RecipeApp.
 Recipe App
 This is a simple Recipe App where users can input recipes, display them, scale the ingredients, reset quantities, and clear all data.
 
