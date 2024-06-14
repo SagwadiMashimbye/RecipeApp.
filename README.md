@@ -58,5 +58,10 @@ calculate and display the total calorie
 Choose option 9 from the main menu
 allows users to choose which food group does ingredients belong
 
+what I have added is that the user shall be able to filter the list of recipes by
+- entering the name of the ingredient that must be in the recipe.
+- Also by choosing a food group that must be in the recipe.
+- also by selecting a maximum numer of calories
+- and also the user can choose multiple recipes to include a menu. 
 License
 This project is licensed under the MIT License.
