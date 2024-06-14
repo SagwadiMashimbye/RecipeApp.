@@ -17,7 +17,7 @@ namespace RecipeAppPoe
             InitializeEventHandlers();
             CalorieNotification += HandleCalorieNotification;
         }
-
+        //
         private void HandleCalorieNotification(string message)
         {
             NotificationTextBlock.Text = message;
